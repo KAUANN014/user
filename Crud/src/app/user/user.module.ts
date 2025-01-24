@@ -6,8 +6,6 @@ import { DeleteUserComponent } from './delete-user/delete-user.component';
 import { LoadUserComponent } from './load-user/load-user.component';
 import { GetUserByIDComponent } from './get-user-by-id/get-user-by-id.component';
 
-
-
 @NgModule({
   declarations: [
     ListUserComponent,
