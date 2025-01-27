@@ -1,0 +1,126 @@
+.login-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+   justify-content: center;
+    align-items: center;
+
+  }
+  
+  .left-side {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .left-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .login-form {
+    flex: 1;
+    background-color: rgba(8, 4, 4, 0.9);
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-form h2 {
+    color: #e6c156;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 100;
+    margin-bottom: 6px;
+  }
+  
+  .form-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #e6c156;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    background-color: #000000;
+    transition: border 0.2s ease-in-out;
+  }
+  
+  .form-control:focus {
+    border-color: yellow;
+    outline: none;
+    box-shadow: 0 0 5px rgba(94, 60, 155, 0.2);
+    color: wheat;
+  }
+  
+  button[type="submit"] {
+    width: 53%;
+    padding: 12px;
+    background-color: rgb(201, 170, 34);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #e6c156;
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    z-index: 10;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  .teste{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @media (max-width: 768px) {
+    .login-container {
+      flex-direction: column;
+    }
+  
+    .left-side {
+      display: none;
+    }
+  
+    .login-form {
+      padding: 20px;
+      margin-left: 0;
+    }
+  
+    footer {
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+  
