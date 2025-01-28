@@ -1,23 +1,27 @@
 <div class="login-container">
-  <!-- Lado esquerdo com a imagem -->
   <div class="left-side">
     <img src="./../../assets/nascar-84466_1280.jpg" alt="Imagem de fundo">
   </div>
 
-  <!-- Formulário de login -->
   <div class="login-form">
-    <form [formGroup] = "formulario" (onSubmit) = "onSubmit()">
+    <form [formGroup]="formulario" (ngSubmit)="enviarForm()">
       <div class="teste">
         <h2>Login</h2>
+
+
         <label for="email" class="form-label">E-mail</label>
-        <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required >
+        <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" formControlName="email" required>
+        <p *ngIf="formulario.controls['email'].errors?.['required'] && formulario.controls['email'].touched">E-mail é obrigatório</p>
+        <p *ngIf="formulario.controls['email'].errors?.['email'] && formulario.controls['email'].touched">E-mail inválido</p>
 
+   
         <label for="password" class="form-label">Senha</label>
-        <input type="password" class="form-control" id="password" placeholder="Digite sua senha" required>
+        <input type="password" class="form-control" id="password" placeholder="Digite sua senha" formControlName="senha" required>
+        <p *ngIf="formulario.controls['senha'].errors?.['required'] && formulario.controls['senha'].touched">Senha é obrigatória</p>
+        <p *ngIf="formulario.controls['senha'].errors?.['minlength']">A senha deve possuir 6 caracteres</p>
 
-        <button type="submit" class="btn btn-primary" [disabled] = "formulario.invalid">Acessar</button>
+        <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid" >Acessar</button>
       </div>
-
     </form>
   </div>
 </div>
