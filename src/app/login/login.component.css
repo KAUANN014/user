@@ -21,7 +21,7 @@
   
   .login-form {
     flex: 1;
-    background-color: rgba(8, 4, 4, 0.9);
+    background-color: rgba(0, 0, 0, 0.973);
     width: 100%;
     font-family: 'Roboto', sans-serif;
     height: 100%;
@@ -125,5 +125,12 @@
   }
   p{
     color: red;
+  }
+  a{
+    color: #ffffff;
+    text-decoration: none;
+  }
+  a:hover{
+    color: #e6c156;
   }
   

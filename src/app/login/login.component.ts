@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit{
     console.log('teste');
     console.log(this.formulario.value);  
 
-    this.router.navigate(['home'])
+    this.router.navigate(['home']);
   }
 
 }
