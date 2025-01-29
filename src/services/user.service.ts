@@ -16,11 +16,11 @@ avatar: string;
 })
 export class UserService {
   
-   apiUrl = environment.apiUrl;
+   baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
   getUsers():Observable<{data:User[]}>{
-    return this.http.get<{data:User[]}>(this.apiUrl)
+    return this.http.get<{data:User[]}>(this.baseUrl)
   }
 }
