@@ -6,12 +6,13 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: false,
-  
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit{
+
   formulario!: FormGroup;
+  msg: string = "";
 
   constructor (private formbuilder: FormBuilder, private router: Router){}
 
@@ -27,17 +28,24 @@ export class LoginComponent implements OnInit{
   }
 
   enviarForm(): void {
+    this.msg = "";
     if (!this.formulario.valid) {
       this.formulario.markAllAsTouched();
+      this.formulario.markAsDirty();
     } else {
       this.enviarDados();
     }
   }
   enviarDados() {
-    console.log('teste');
-    console.log(this.formulario.value);  
-
-    this.router.navigate(['home']);
+    const email = this.formulario.get('email')?.value;
+    const senha = this.formulario.get('senha')?.value;
+    if(email === 'teste@teste.com' && senha === '123456' ) {
+      console.log(this.formulario.value);  
+      this.router.navigate(['home']);
+    }else {
+      this.msg = "Dados incorretos";
+    }
+   
   }
 
 }

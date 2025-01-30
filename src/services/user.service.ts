@@ -2,14 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/enviroments';
-
-interface User{
-id : number;
-email: string;
-first_name: string;
-last_name: string;
-avatar: string;
-}
+import { User } from '../app/core/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +15,9 @@ export class UserService {
 
   getUsers():Observable<{data:User[]}>{
     return this.http.get<{data:User[]}>(this.baseUrl)
+  }
+
+  teste() {
+    
   }
 }

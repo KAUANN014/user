@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
+import { FormsModule } from '@angular/forms';
 
 
 import {MatButtonModule} from '@angular/material/button';
@@ -19,12 +20,17 @@ import { RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './layout/header/header.component';
+import { MatToolbarModule } from '@angular/material/toolbar'; 
+import {MatMenuModule} from '@angular/material/menu'
+import { MatCard } from '@angular/material/card';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ListUserComponent
+    ListUserComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +46,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule, 
     MatTableModule,
     MatPaginator,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatCard,
+    FormsModule
    
   ],
   providers: [

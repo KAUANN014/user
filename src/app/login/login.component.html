@@ -16,10 +16,10 @@
 
    
         <label for="password" class="form-label">Senha</label>
-        <input type="password" class="form-control" id="password" placeholder="Digite sua senha" formControlName="senha" required>
+        <input type="password" class="form-control" id="password" placeholder="Digite sua senha" maxlength="6" formControlName="senha" required>
         <p *ngIf="formulario.controls['senha'].errors?.['required'] && formulario.controls['senha'].touched">Senha é obrigatória</p>
         <p *ngIf="formulario.controls['senha'].errors?.['minlength']">A senha deve possuir 6 caracteres</p>
-
+        <p>{{ msg }}</p>
         <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid" >Acessar</button>
         <br>
         <a href="#">Não tenho cadastro</a>
