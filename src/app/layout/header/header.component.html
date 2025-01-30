@@ -1,41 +1,36 @@
 <mat-toolbar color="primary" class="header-toolbar mat-elevation-z4">
-    <!-- Logo -->
-    <div class="logo">
-      <img src="../../../assets/helmet.png" alt="Logo" class="logo-img">
-    </div>
-  
-    <!-- Botões para telas grandes -->
-    <div class="buttons" *ngIf="!isMobile">
-      <button mat-button>Botão 1</button>
-      <button mat-button>Botão 2</button>
-      <button mat-button>Botão 3</button>
-    </div>
-  
-    <!-- Menu Hamburger para telas pequenas -->
-    <div class="menu-hamburger" *ngIf="isMobile">
-      <button mat-icon-button (click)="toggleMenu()">
-        <mat-icon>menu</mat-icon>
-      </button>
-    </div>
-  
-    <!-- Ícone de Usuário -->
-    <div class="user-icon">
-      <button mat-icon-button [matMenuTriggerFor]="userMenu">
-        <mat-icon>account_circle</mat-icon>
-      </button>
-  
-      <!-- Menu de Usuário -->
-      <mat-menu #userMenu="matMenu">
-        <button mat-menu-item>Perfil</button>
-        <button mat-menu-item>Sair</button>
-      </mat-menu>
-    </div>
-  </mat-toolbar>
-  
-  <!-- Menu de Navegação (Hamburger) -->
-  <div class="hamburger-menu" *ngIf="isMenuOpen && isMobile">
-    <button mat-button (click)="navigateTo('opcao1')">Botão 1</button>
-    <button mat-button (click)="navigateTo('opcao2')">Botão 2</button>
-    <button mat-button (click)="navigateTo('opcao3')">Botão 3</button>
+  <div class="logo">
+    <img src="../../../assets/helmet.png" alt="Logo" class="logo-img">
   </div>
-  
+
+  <div class="buttons" *ngIf="!isMobile">
+    <button mat-button>Botão 1</button>
+    <button mat-button>Botão 2</button>
+    <button mat-button>Botão 3</button>
+  </div>
+
+  <div class="menu-hamburger" *ngIf="isMobile">
+    <button mat-icon-button (click)="toggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+
+
+  <div class="user-icon">
+    <button mat-icon-button [matMenuTriggerFor]="userMenu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item>Perfil</button>
+      <button mat-menu-item>Sair</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+
+<!-- Menu de Navegação (Hamburger) -->
+<div class="hamburger-menu" *ngIf="isMenuOpen && isMobile">
+  <button mat-button (click)="navigateTo('opcao1')">Botão 1</button>
+  <button mat-button (click)="navigateTo('opcao2')">Botão 2</button>
+  <button mat-button (click)="navigateTo('opcao3')">Botão 3</button>
+</div>
