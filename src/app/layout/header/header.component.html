@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" class="header-toolbar mat-elevation-z4">
   <div class="logo">
-    <img src="../../../assets/helmet.png" alt="Logo" class="logo-img">
+    <img src="../../../assets/helmet.png" alt="Logo" class="logo-img" (click) = "voltarPara()">
   </div>
 
   <div class="buttons" *ngIf="!isMobile">
@@ -28,7 +28,7 @@
   </div>
 </mat-toolbar>
 
-<!-- Menu de Navegação (Hamburger) -->
+
 <div class="hamburger-menu" *ngIf="isMenuOpen && isMobile">
   <button mat-button (click)="navigateTo('opcao1')">Botão 1</button>
   <button mat-button (click)="navigateTo('opcao2')">Botão 2</button>

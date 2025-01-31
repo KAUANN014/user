@@ -12,12 +12,12 @@
         <mat-icon>search</mat-icon>
       </button>
     </mat-form-field>
-  </div>
 
-  <div>
-    <button mat-raised-button color="primary">
-      Adicionar usuario
-    </button>
+    <div class="add-container">
+      <button mat-raised-button color="primary" (click)="newUser()" class="add-user-btn">
+        <mat-icon>add</mat-icon> Adicionar Usuário
+      </button>
+    </div>
   </div>
 
   <mat-card-content>
@@ -49,5 +49,5 @@
     </mat-paginator>
   </mat-card-content>
 
-
 </div>
+<app-footer></app-footer>

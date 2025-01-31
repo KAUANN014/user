@@ -1,1 +1,41 @@
-<p>create-user works!</p>
+<div>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Cadastro de Usuário</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Nome</mat-label>
+                    <input matInput formControlName="name" placeholder="Digite seu nome" />
+                    <mat-error *ngIf="name.invalid && name.touched">Nome é obrigatório</mat-error>
+
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput formControlName="email" placeholder="Digite seu e-mail" />
+                    <mat-error *ngIf="email.invalid && email.touched">E-mail é obrigatório</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Senha</mat-label>
+                    <input matInput formControlName="email" placeholder="Digite sua senha" />
+                    <mat-error *ngIf="password.invalid && password.touched">Senha é obrigatória</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Senha</mat-label>
+                    <input matInput formControlName="email" placeholder="Digite sua senha" />
+                    <mat-error *ngIf="confirmPassword.invalid && confirmPassword.touched">Senha é obrigatória</mat-error>
+                </mat-form-field>
+
+
+            </mat-card-content>
+            <mat-card-footer>
+                <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">Cadastrar</button>
+            </mat-card-footer>
+        </mat-card>
+    </form>
+</div>

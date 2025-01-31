@@ -1,5 +1,6 @@
 .principal {
     padding: 40px;
+    background-color: rgb(241, 241, 241);
 }
 
 mat-card {
@@ -28,3 +29,47 @@ table {
 mat-paginator {
     margin-top: 10px;
 }
+.search-container {
+    display: flex;
+    justify-content: flex-start;  
+    align-items: center;         
+    gap: 10px;                    
+  }
+  .add-container{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+ 
+.add-user-btn {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px; 
+    border-radius: 8px;  
+    font-size: 14px;  
+    min-width: 20px;  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .add-user-btn mat-icon {
+    margin-right: 12px;  
+    font-size: 24px;  
+  }
+  
+  .add-user-btn:hover {
+    background-color: #e6e6e6; 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);  
+  }
+  
+  .add-user-btn:focus {
+    outline: none;  
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .add-user-btn:active {
+    transform: scale(0.98);  
+  }
+
+  

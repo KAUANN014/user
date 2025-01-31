@@ -24,13 +24,15 @@ import { HeaderComponent } from './layout/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar'; 
 import {MatMenuModule} from '@angular/material/menu'
 import { MatCard } from '@angular/material/card';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ListUserComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

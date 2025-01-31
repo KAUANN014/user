@@ -9,7 +9,9 @@
 .logo {
   flex-grow: 1;
 }
-
+.logo-img:hover{
+  cursor: pointer;
+}
 .logo-img {
   width: 120px;
   height: auto;

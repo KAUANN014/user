@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ViewChild } from '@angular/core';
 import { User } from '../../core/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-user',
@@ -18,10 +19,10 @@ export class ListUserComponent implements OnInit {
   displayedColumns: string[] = ['avatar', 'name', 'email'];
   dataSource!: MatTableDataSource<User>;
   searchTerm: string = ''
-
+  
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
     this.userService.getUsers().subscribe({
@@ -37,13 +38,20 @@ export class ListUserComponent implements OnInit {
     });
   }
   onPageChanged(event: any): void {
+  this.dataSource.paginator = this.paginator
   }
 
   onSearch(): void {
-    if (this.searchTerm) {
-      console.log(this.searchTerm);
+    if (this.searchTerm.trim()) {
+      this.dataSource.filter = this.searchTerm.trim().toLowerCase();
     }
-    else { }
+    else { 
+      this.dataSource.filter
+    }
+  }
+
+  newUser():void{
+      this.router.navigate(['/novo-usuario'])
   }
 
 }

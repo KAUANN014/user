@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import {  Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { Component, HostListener } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent   {
  
   isMobile: boolean = false;
   isMenuOpen: boolean = false; // Controle do estado do menu
@@ -21,15 +22,22 @@ export class HeaderComponent {
     }
   }
 
-  // Método para alternar o menu hamburger
+
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  // Método para navegar
+ 
+  
   navigateTo(option: string) {
     console.log('Navegar para: ', option);
-    this.isMenuOpen = false; // Fecha o menu após clicar em uma opção
+    this.isMenuOpen = false; 
+  }
+  
+  constructor(private router: Router){}
+
+  voltarPara():void{
+    this.router.navigate(['/Login'])
   }
 
 }
