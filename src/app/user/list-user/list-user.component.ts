@@ -24,7 +24,7 @@ export class ListUserComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit():void {
     this.userService.getUsers().subscribe({
       next: (response) => {
         this.users = response.data;
@@ -36,7 +36,13 @@ export class ListUserComponent implements OnInit {
         this.errorMessage = 'Erro ao carregar usuários';
       }
     });
+
+    this.userService.users$.subscribe((users)=>{
+      this.users = this.users
+    })
+    this.userService.reloadUsers();
   }
+
   onPageChanged(event: any): void {
   this.dataSource.paginator = this.paginator
   }
@@ -51,7 +57,7 @@ export class ListUserComponent implements OnInit {
   }
 
   newUser():void{
-      this.router.navigate(['/novo-usuario'])
+      this.router.navigate(['create'])
   }
 
 }

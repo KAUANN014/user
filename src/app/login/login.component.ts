@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit{
     const senha = this.formulario.get('senha')?.value;
     if(email === 'teste@teste.com' && senha === '123456' ) {
       console.log(this.formulario.value);  
-      this.router.navigate(['home']);
+      this.router.navigate(['list-user']);
     }else {
       this.msg = "Dados incorretos";
     }

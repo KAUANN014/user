@@ -7,7 +7,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http'; 
 import { FormsModule } from '@angular/forms';
-
+import { UsersModule } from './user/user.module';
 
 import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -22,7 +22,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar'; 
 import {MatMenuModule} from '@angular/material/menu'
 import { MatCard } from '@angular/material/card';
-import { UsersModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -48,7 +47,9 @@ import { UsersModule } from './user/user.module';
     MatToolbarModule,
     MatMenuModule,
     MatCard,
-    FormsModule   
+    FormsModule,
+    UsersModule
+  
   ],
   providers: [
     provideAnimationsAsync()

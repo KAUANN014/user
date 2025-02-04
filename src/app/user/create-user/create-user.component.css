@@ -2,6 +2,7 @@ mat-card-content{
     display: flex;
     flex-direction: column;
     border-radius: 20px;
+    padding: 60px;
 }
 mat-card{
     width: 1000%;

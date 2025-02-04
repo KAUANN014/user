@@ -37,7 +37,7 @@ export class HeaderComponent   {
   constructor(private router: Router){}
 
   voltarPara():void{
-    this.router.navigate(['/Login'])
+    this.router.navigate(['/login'])
   }
 
 }

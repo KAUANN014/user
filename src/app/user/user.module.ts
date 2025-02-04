@@ -12,13 +12,27 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbar } from '@angular/material/toolbar';
+import { UserRoutingModule } from './user-routing.module';
+import { HeaderComponent } from '../layout/header/header.component';
+import { ListUserComponent } from './list-user/list-user.component';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
+import {  MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { FooterComponent } from '../layout/footer/footer.component';
+import {ToastrModule} from 'ngx-toastr'
+
+
 
 @NgModule({
   declarations: [
     CreateUserComponent,
     DeleteUserComponent,
     LoadUserComponent,
-    GetUserByIDComponent
+    GetUserByIDComponent,
+    HeaderComponent,
+    ListUserComponent,
+    CreateUserComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +43,14 @@ import { MatToolbar } from '@angular/material/toolbar';
     MatInputModule,
     MatMenuModule,
     MatSlideToggleModule,
-    MatToolbar
+    MatToolbar,
+    UserRoutingModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatTableModule,
+    ToastrModule.forRoot(),
+    
+   
   ]
 })
 export class UsersModule { }
