@@ -19,7 +19,7 @@ export class ListUserComponent implements OnInit {
   displayedColumns: string[] = ['avatar', 'name', 'email'];
   dataSource!: MatTableDataSource<User>;
   searchTerm: string = ''
-  
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private userService: UserService, private router: Router) { }
@@ -51,13 +51,19 @@ export class ListUserComponent implements OnInit {
     if (this.searchTerm.trim()) {
       this.dataSource.filter = this.searchTerm.trim().toLowerCase();
     }
-    else { 
+    else {
       this.dataSource.filter
     }
   }
 
   newUser():void{
-      this.router.navigate(['create'])
+      this.router.navigate(['/home-user/create'])
   }
 
+  loadUsers() {
+    this.userService.getUsers().subscribe(response => {
+      const users = response.data;
+      this.userService.updateUsersList(users);  
+    });
+  }
 }

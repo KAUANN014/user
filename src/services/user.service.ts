@@ -1,9 +1,8 @@
+import { User } from './../app/core/user.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { environment } from '../environments/enviroments';
-import { User } from '../app/core/user.model';
-import {tap} from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +20,8 @@ export class UserService {
     return this.http.get<{ data: User[] }>(this.baseUrl)
   }
 
-  createUser(user: any): Observable<any> {
-    return this.http.post<any>(this.baseUrl, user).pipe(
-      tap(() => this.reloadUsers())
-    );
+  createUser(user: User): Observable<User> {
+    return this.http.post<User>(this.baseUrl, user);
   }
 
   reloadUsers(): void {
@@ -32,4 +29,16 @@ export class UserService {
       this.usersSubject.next(response.data)
     })
   }
+
+  updateUsersList(users: User[]): void {
+    this.usersSubject.next(users);
+  }
+  addUserToList(user: User): void {
+    const currentUsers = this.usersSubject.getValue();
+
+    const updatedUsers = [...currentUsers, user];
+
+    this.usersSubject.next(updatedUsers);
+  }
+
 }

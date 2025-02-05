@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit{
 
   inicializarForm() {
     this.formulario = this.formbuilder.group({
-      email: ['', [ Validators.required, Validators.email]],
-      senha: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(6)]]
+      email: ['', [ Validators.required, ]],
+      senha: ['', [Validators.required,]]
     })
   }
 
@@ -39,13 +39,13 @@ export class LoginComponent implements OnInit{
   enviarDados() {
     const email = this.formulario.get('email')?.value;
     const senha = this.formulario.get('senha')?.value;
-    if(email === 'teste@teste.com' && senha === '123456' ) {
-      console.log(this.formulario.value);  
-      this.router.navigate(['list-user']);
+    if(email === '1' && senha === '1' ) {
+      console.log(this.formulario.value);
+      this.router.navigate(['home-user']);
     }else {
       this.msg = "Dados incorretos";
     }
-   
+
   }
 
 }
