@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UsersModule } from '../user.module';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from '../../../services/user.service';
 import { Router } from '@angular/router';
@@ -8,9 +7,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-user',
   standalone: false,
-
   templateUrl: './create-user.component.html',
   styleUrl: './create-user.component.css'
+  
 })
 export class CreateUserComponent {
   userForm!: FormGroup;
@@ -19,7 +18,7 @@ export class CreateUserComponent {
 
   ngOnInit() {
     this.userForm = this.fb.group({
-      nome: ['', ],
+      nome: ['',Validators.required ],
       email: ['', []],
       password: ['', ],
       confirmPassword: ['', ]
