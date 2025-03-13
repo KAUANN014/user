@@ -1,4 +1,3 @@
-// config/db.js
 require('dotenv').config();  // Carregar variáveis de ambiente
 const mongoose = require('mongoose');
 
